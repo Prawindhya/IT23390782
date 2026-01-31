@@ -28,7 +28,7 @@
    {
      id: 'Pos_Fun_0004',
      description: 'Morning greeting',
-     input: 'subha ud',
+     input: 'subha udasanak',
      expected: 'සුභ උදාසනක්'
    },
    {
