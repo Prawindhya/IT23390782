@@ -16,7 +16,7 @@
    {
     id: 'Pos_Fun_0002',
     description: 'Compound sentence with conjunction',
-    input: 'Mama sindhu kiyala  Ivara karala passe kannam.',
+    input: ' sindhu kiyala  Ivara karalMamaa passe kannam',
     expected: 'මම සින්දු කියල  ඉවර කරල පස්සෙ කන්නම්'
 
    },
@@ -117,51 +117,51 @@
    },
    {
      id: 'Pos_Fun_0017',
-     description: 'Talking about studying',
-     input: 'mama padham kiyawanawa',
-     expected: 'මම පදම් කියවනව'
+     description: 'Multi-word collocation',
+     input: 'api dhaen thee bonavaa',
+     expected: 'අපි දැන් තේ බොනවා'
    },
    {
      id: 'Pos_Fun_0018',
-     description: 'Asking to come',
-     input: 'enna puluwandha',
-     expected: 'එන්න පුළුවන්ද'
+     description: 'Input with line breaks',
+     input: 'mama samapoosha kaevaa. iitapasse mama paasal yanavaa.',
+     expected: 'මම සමපෝෂ කෑවා. ඊටපස්සේ මම පාසල් යනවා.'
    },
    {
      id: 'Pos_Fun_0019',
-     description: 'Talking about weather',
-     input: 'adha wassa enawa',
-     expected: 'අද වැස්ස එනව'
+     description: 'Multiple spaces handling',
+     input: 'ammee           mama gedhara ena gaman inne bath uyalaa thiyanna ',
+     expected: 'අම්මේ           මම ගෙදර එන ගමන් ඉන්නේ බත් උයලා තියන්න '
    },
    {
      id: 'Pos_Fun_0020',
-     description: 'Expression of tiredness',
-     input: 'mata harima saaradhaiyi',
-     expected: 'මට හරිම සාරදයියි'
+     description: 'Pronoun variation (They)',
+     input: 'Eyaala adha havasata guruthumi balanna yanavaa kiyuvaa',
+     expected: 'එයාල අද හවසට ගුරුතුමි බලන්න යනවා කියුවා'
    },
    {
      id: 'Pos_Fun_0021',
-     description: 'Asking about lunch',
-     input: 'adha lunch eka mokakdha',
-     expected: 'අද lunch එක මොකක්ද'
+     description: 'Complex punctuations',
+     input: 'oya (mata) ehema kale kohomadha?',
+     expected: 'ඔය (මට) එහෙම kale කොහොමද?'
    },
    {
      id: 'Pos_Fun_0022',
-     description: 'Simple past tense',
-     input: 'mama giya',
-     expected: 'මම ගිය'
+     description: 'English Abbreviations',
+     input: 'oyaagee PIN eka venas kalee aeyi?',
+     expected: 'ඔයාගේ PIN එක වෙනස් කලේ ඇයි?'
    },
    {
      id: 'Pos_Fun_0023',
-     description: 'Expressing happiness',
-     input: 'mata harima santhosaiyi',
-     expected: 'මට හරිම සන්තෝසයයි'
+     description: 'Informal command',
+     input: 'adoo oya putuva  tikak mehaata karanavakoo',
+     expected: 'අඩෝ ඔය පුටුව  ටිකක් මෙහාට කරනවකෝ'
    },
    {
      id: 'Pos_Fun_0024',
-     description: 'Asking to wait',
-     input: 'tikak inna',
-     expected: 'ටිකක් ඉන්න'
+     description: 'Long paragraph input',
+     input: 'Artificial Intelligence (AI) kiyanne machines valata minissu vagee hithanna, igena ganna saha prashna visadhanna puLuvan vidhihata hadhapu computer science vala ek kotasak. Algorithms saha data karala, machine learning saha generative AI wage advanced technology haraha patterns adhuraganna puLuvan thaakShaNayak.',
+     expected: 'Artificial Intelligence (AI) කියන්නෙ machines වලට මිනිස්සු වගේ හිතන්න, ඉගෙන ගන්න සහ ප්‍රශ්න විසදන්න පුළුවන් විදිහට හදපු computer science වල එක් කොටසක්. Algorithms සහ data කරල, machine learning සහ generative AI wage advanced technology හරහ patterns අදුරගන්න පුළුවන් තාක්ෂණයක්.'
    }
  ];
  
@@ -171,65 +171,90 @@
  const negativeScenarios = [
    {
      id: 'Neg_Fun_0001',
-     description: 'Chat shorthand "Thx" should fail to convert meaningfully',
-     input: 'Thx',
-     expected: 'ථx'
+     description: 'Phonetic mapping failure for wa character',
+     input: 'himiwenawaa',
+     expected: 'හිමිවෙනවා'
    },
    {
      id: 'Neg_Fun_0002',
-     description: 'Incorrect stress test with missing spaces',
-     input: 'mamagedharayanavaa',
-     expected: 'මමගෙදරයනවා'
+     description: 'Complex Phonetic Cluster Recognition',
+     input: 'aBA gediya (BA)',
+     expected: 'අඹ ගෙඩිය (ඹ)'
    },
    {
      id: 'Neg_Fun_0003',
-     description: 'Numbers only input',
-     input: '12345',
-     expected: '12345'
+     description: 'URL character handling failure',
+     input: 'https://kellyfelder.com',
+     expected: 'එච්ටිටිපි://කෙලිෆෙල්ඩර්.කොම්'
    },
    {
      id: 'Neg_Fun_0004',
-     description: 'Special characters only',
-     input: '@#$%^&*',
-     expected: '@#$%^&*'
+     description: 'Failure to preserve English brand names',
+     input: 'dior,gucci,spaceylon,cerave,cetaphil',
+     expected: 'dior,guci,spaceylon,cerave,cetaphil'
    },
    {
      id: 'Neg_Fun_0005',
-     description: 'Empty spaces only',
-     input: '     ',
-     expected: ''
+     description: 'Failure to render Yansaya symbol',
+     input: '  oya avashshya dheval vitharak  aragana yanna    ',
+     expected: 'ඔය අවශ්‍ය දෙවල් විතරක්  අරගන යන්න'
    },
    {
      id: 'Neg_Fun_0006',
-     description: 'Mixed random characters',
-     input: 'xyz123',
-     expected: 'xයz123'
+     description: 'Technical shortcut transliteration failure',
+     input: 'dhaen Ctrl+V obalaa iitapasse paste karaganna puluvan oyaata',
+     expected: 'දැන් Ctrl+V ඔබලා ඊටපස්සෙ paste කරගන්න පුලුවන් ඔයාට'
    },
    {
      id: 'Neg_Fun_0007',
-     description: 'Single character input',
-     input: 'k',
-     expected: 'ක්'
+     description: 'Mathematical variable transliteration failure',
+     input: '2y+2x =5y meeka visadhala pennanna',
+     expected: '2y+2x =5y මේක විසදල පෙන්නන්න'
    },
    {
      id: 'Neg_Fun_0008',
-     description: 'All caps input',
-     input: 'KOHOMADHA',
-     expected: 'KOHOMADHA'
+     description: 'Failure to preserve CLI commands',
+     input: '"npm create vite@latest my-app -- --template react" terminal ekee run karalaa project eka hadhaaganna.',
+     expected: '"npm create vite@latest my-app -- --template react" terminal එකේ run කරලා project එක හදාගන්න'
    },
    {
      id: 'Neg_Fun_0009',
-     description: 'Very long text without proper spacing',
-     input: 'mamayanawagetharagedharakohedhayanawadhen',
-     expected: 'මමයනවගෙතරගෙදරකොහෙදයනවදෙන්'
+     description: 'Case sensitivity mapping failure',
+     input: 'mama australia yanavaa.kalin Australia hitiye',
+     expected: 'මම Australia යනවා.කලින් Australia හිටියෙ'
    },
    {
      id: 'Neg_Fun_0010',
-     description: 'Random gibberish',
-     input: 'qwerty',
-     expected: 'qwඑර්තය'
+     description: 'Vowel emphasis mapping failure',
+     input: 'apee maamaA inne yaaApaneee',
+     expected: 'අපේ මාමා ඉන්නේ යාපනේ'
    }
  ];
+ // ---------------------------------------------------------------------------
+ // 1 UI SCENARIO
+ // ---------------------------------------------------------------------------
+
+ const UIScenarios = [
+  {
+    id: 'UI_Fun_0001',
+    description: 'Check for output synchronization in real time.',
+    input: 'mama gedhara yanavaa',
+    expected: 'මම ගෙදර යනවා'
+
+
+'
+  }
+
+
+ ];
+
+
+
+
+
+
+
+
  
  // ---------------------------------------------------------------------------
  // TEST SUITE
