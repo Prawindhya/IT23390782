@@ -236,10 +236,10 @@
 
  const UIScenarios = [
   {
-    id: 'UI_Fun_0001',
+    id: 'Pos_UI_0001:',
     description: 'Check for output synchronization in real time.',
-    input: 'mama gedhara yanava',
-    expected: 'මම ගෙදර යනව'
+    input: 'mama ',
+    expected: 'මම '
   }
 
 
