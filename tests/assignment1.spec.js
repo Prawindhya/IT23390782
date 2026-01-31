@@ -8,34 +8,36 @@
  // ---------------------------------------------------------------------------
  const positiveScenarios = [
    {
-     id: 'Pos_Fun_0001',
-     description: 'Convert a short daily greeting phrase',
-     input: 'oyaata kohomadha?',
-     expected: 'ඔයාට කොහොමද?'
+    id: 'Pos_Fun_0001',
+    description: 'Simple Present Tense Sentence',
+    input: 'mama roohalata yanavaa',
+    expected: 'මම රෝහලට යනවා'
    },
    {
-     id: 'Pos_Fun_0002',
-     description: 'Mixed language input (Singlish + English terms)',
-     input: 'machan mata adha meeting ekee Zoom link eka email ekak vidhihata evanna puLuvandha?',
-     expected: 'මචන් මට අද meeting එකේ Zoom link එක email එකක් විදිහට එවන්න පුළුවන්ද?'
+    id: 'Pos_Fun_0002',
+    description: 'Compound sentence with conjunction',
+    input: 'Mama sindhu kiyala  Ivara karala passe kannam.',
+    expected: 'මම සින්දු කියල  ඉවර කරල පස්සෙ කන්නම්',
+
    },
    {
-     id: 'Pos_Fun_0003',
-     description: 'Simple Request',
-     input: 'mata help ekak karanna puLuvandha?',
-     expected: 'මට help එකක් කරන්න පුළුවන්ද?'
+    id: 'Pos_Fun_0003',
+    description: 'Complex conditional sentence',
+    input: 'oyaa mage lap eka eka hadhanavaa naQQ mama rotii tika hadhannam.',
+    expected: 'ඔයා mage lap එක එක හදනවා නං මම රොටී ටික හදන්නම්.',
    },
    {
-     id: 'Pos_Fun_0004',
-     description: 'Morning greeting',
-     input: 'subha udasanak',
-     expected: 'සුභ උදාසනක්'
+    id: 'Pos_Fun_0004',
+    description: 'Polite request form',
+    input: 'karuNaakaralaa mata udhav karanna',
+    expected: ' කරුණාකරලා මට උදව් කරන්න',
+
    },
    {
-     id: 'Pos_Fun_0005',
-     description: 'Asking about well-being',
-     input: 'kohomadha oya',
-     expected: 'කොහොමද ඔය'
+    id: 'Pos_Fun_0005',
+    description: 'Direct command (imperative)',
+    input: 'vahaama othanin ivath venna',
+    expected: 'වහාම ඔතනින් ඉවත් වෙන්න',
    },
    {
      id: 'Pos_Fun_0006',
